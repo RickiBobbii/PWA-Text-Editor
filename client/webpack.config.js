@@ -20,7 +20,7 @@ module.exports = () => {
     plugins: [
       //Generates the index.html file and injects the bundle
       new HtmlWebpackPlugin({
-        template: './src/index.html',
+        template: './index.html',
         filename: 'index.html',
       }),
       //Injects the service worker into the html file
