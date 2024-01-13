@@ -18,12 +18,54 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      
+      //Generates the index.html file and injects the bundle
+      new HtmlWebpackPlugin({
+        template: './index.html',
+        filename: 'index.html',
+      }),
+      //Injects the service worker into the html file
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
+      }),
+      //Generates the manifest file
+      new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
+        name: 'PWA Text Editor',
+        short_name: 'Text Editor',
+        description: 'A simple text editor PWA',
+        background_color: '#ffffff',
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+          },
+        ],
+      }),
     ],
 
     module: {
       rules: [
-        
+        //CSS loaders
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader'],
+        },
+        //Babel loader
+        {
+          test: /\.m?js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: { 
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-transform-runtime', 
+              '@babel/plugin-proposal-object-rest-spread'],
+
+          },
+          }
+        },
       ],
     },
   };
