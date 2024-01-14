@@ -1,92 +1,144 @@
-# OSU-VIRT-FSF-PT-08-2023-U-LOLC
+# 19 Progressive Web Applications (PWA): Text Editor
 
+## Your Task
 
+As you have progressed through this course, you have put together a number of impressive projects that you can show off to potential employers. This project is no exception; in fact, it features some of the most impressive expressions of the concepts you have learned so far.
 
-## Getting started
+Your task is to build a text editor that runs in the browser. The app will be a single-page application that meets the PWA criteria. Additionally, it will feature a number of data persistence techniques that serve as redundancy in case one of the options is not supported by the browser. The application will also function offline.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+To build this text editor, you will start with an existing application and implement methods for getting and storing data to an IndexedDB database. You will use a package called `idb`, which is a lightweight wrapper around the IndexedDB API. It features a number of methods that are useful for storing and retrieving data, and is used by companies like Google and Mozilla.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+You will deploy this full-stack application to Heroku using the [Heroku Deployment Guide on The Full-Stack Blog](https://coding-boot-camp.github.io/full-stack/heroku/heroku-deployment-guide).
 
-## Add your files
+**Important**: Make sure your submission includes the `.npmrc` file in this starter code.  This will ensure your application will deploy properly to heroku.
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+## User Story
 
+```md
+AS A developer
+I WANT to create notes or code snippets with or without an internet connection
+SO THAT I can reliably retrieve them for later use
 ```
-cd existing_repo
-git remote add origin https://git.bootcampcontent.com/Ohio-State-University/OSU-VIRT-FSF-PT-08-2023-U-LOLC.git
-git branch -M main
-git push -uf origin main
+
+## Acceptance Criteria
+
+```md
+GIVEN a text editor web application
+WHEN I open my application in my editor
+THEN I should see a client server folder structure
+WHEN I run `npm run start` from the root directory
+THEN I find that my application should start up the backend and serve the client
+WHEN I run the text editor application from my terminal
+THEN I find that my JavaScript files have been bundled using webpack
+WHEN I run my webpack plugins
+THEN I find that I have a generated HTML file, service worker, and a manifest file
+WHEN I use next-gen JavaScript in my application
+THEN I find that the text editor still functions in the browser without errors
+WHEN I open the text editor
+THEN I find that IndexedDB has immediately created a database storage
+WHEN I enter content and subsequently click off of the DOM window
+THEN I find that the content in the text editor has been saved with IndexedDB
+WHEN I reopen the text editor after closing it
+THEN I find that the content in the text editor has been retrieved from our IndexedDB
+WHEN I click on the Install button
+THEN I download my web application as an icon on my desktop
+WHEN I load my web application
+THEN I should have a registered service worker using workbox
+WHEN I register a service worker
+THEN I should have my static assets pre cached upon loading along with subsequent pages and static assets
+WHEN I deploy to Heroku
+THEN I should have proper build scripts for a webpack application
 ```
 
-## Integrate with your tools
+## Mock-Up
 
-- [ ] [Set up project integrations](https://git.bootcampcontent.com/Ohio-State-University/OSU-VIRT-FSF-PT-08-2023-U-LOLC/-/settings/integrations)
+The following animation demonstrates the application functionality:
 
-## Collaborate with your team
+![Demonstration of the finished Module 19 Challenge being used in the browser and then installed.](./Assets/00-demo.gif)
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+The following image shows the application's `manifest.json` file:
 
-## Test and Deploy
+![Demonstration of the finished Module 19 Challenge with a manifest file in the browser.](./Assets/01-manifest.png)
 
-Use the built-in continuous integration in GitLab.
+The following image shows the application's registered service worker:
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+![Demonstration of the finished Module 19 Challenge with a registered service worker in the browser.](./Assets/02-service-worker.png)
 
-***
+The following image shows the application's IndexedDB storage:
 
-# Editing this README
+![Demonstration of the finished Module 19 Challenge with a IndexedDB storage named 'jate' in the browser.](./Assets/03-idb-storage.png)
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+## Grading Requirements
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
+>
+> * A repository that has no code
+>
+> * A repository that includes a unique name but nothing else
+>
+> * A repository that includes only a README file but nothing else
+>
+> * A repository that only includes starter code
 
-## Name
-Choose a self-explaining name for your project.
+This Challenge is graded based on the following criteria:
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+### Technical Acceptance Criteria: 40%
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+* Satisfies all of the above acceptance criteria plus the following:
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+  * Uses IndexedDB to create an object store and includes both GET and PUT methods
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+  * The application works without an internet connection
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+  * Automatically saves content inside the text editor when the DOM window is unfocused
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+  * Bundled with webpack
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+  * Create a service worker with workbox that Caches static assets
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+  * The application should use babel in order to use async / await
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+  * Application must have a generated `manifest.json` using the `WebpackPwaManifest` plug-in
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+  * Can be installed as a Progressive Web Application
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+### Deployment: 32%
 
-## License
-For open source projects, say how it is licensed.
+* Application deployed to Heroku at live URL with build scripts
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+* Application loads with no errors
+
+* Application GitHub URL submitted
+
+* GitHub repo contains application code
+
+### Application Quality: 15%
+
+* Application user experience is intuitive and easy to navigate
+
+* Application user interface style is clean and polished
+
+* Application resembles the mock-up functionality provided in the Challenge instructions
+
+### Repository Quality: 13%
+
+* Repository has a unique name
+
+* Repository follows best practices for file structure and naming conventions
+
+* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+
+* Repository contains multiple descriptive commit messages
+
+* Repository contains quality README file with description, screenshot, and link to deployed application
+
+## Review
+
+You are required to submit the following for review:
+
+* The URL of the deployed application
+
+* The URL of the GitHub repository, with a unique name and a README describing the project
+
+- - -
+© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
