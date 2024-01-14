@@ -21,7 +21,8 @@ module.exports = () => {
       //Generates the index.html file and injects the bundle
       new HtmlWebpackPlugin({
         template: './index.html',
-        filename: 'index.html',
+        //filename: 'index.html',
+        title: 'Jate',
       }),
       //Injects the service worker into the html file
       new InjectManifest({
@@ -37,7 +38,7 @@ module.exports = () => {
         description: 'A simple text editor PWA',
         background_color: '#ffffff',
         theme_color: '#ffffff',
-        start_url: '/',
+        start_url: '/',  
         publicPath: '/',
         icons: [
           {
