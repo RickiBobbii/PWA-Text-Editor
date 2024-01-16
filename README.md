@@ -74,7 +74,19 @@ THEN I should have proper build scripts for a webpack application
 
 ## Screenshot
 
-![](./)
+<details>
+  <summary>Click Arrow for Screenshot Collection</summary>
+  <img src="./Assets/JateImage1.png" alt="image-description"/>
+  <img src="./Assets/JateImage2.png" alt="image-description"/>
+  <img src="./Assets/JateImage3.png" alt="image-description"/>
+  <img src="./Assets/JateImage4.png" alt="image-description"/>
+  <img src="./Assets/JateImage5.png" alt="image-description"/>
+  <img src="./Assets/JateImage6.png" alt="image-description"/>
+  <img src="./Assets/JateImage7.png" alt="image-description"/>
+  <img src="./Assets/JateImage8.png" alt="image-description"/>
+</details>
+
+##
 ![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWlvZWdqNzM4djF5cTZ2cGw2MDg4aG5yeWR5dTNkdHlqNTQ1aTZsZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/M26RtIbNwS5cGvoDKo/giphy.gif)
 
 ## Application Link
